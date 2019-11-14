@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>20191108-springcloud</artifactId>
+        <groupId>com.regina.springcloud</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>20191108-provider-management</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>20191108-provider-8081</module>
+        <module>20191111-provider-8082</module>
+        <module>20191111-provider-8083</module>
+    </modules>
+    <dependencies>
+        <dependency>
+            <groupId>com.regina.springcloud</groupId>
+            <artifactId>20191108-management-service</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+        <!--在eureka页面中点击instance-id "book-provider-8082" 时，会跳转的页面出现的信息设置处，
+        在配置中设置
+        info.name=regina
+        info.address=...等信息；若不设置且不引jar则点进去会出现404页面-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+    </dependencies>
+
+
+</project>
